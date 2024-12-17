@@ -1,0 +1,40 @@
+### Test "Welcome" Message
+GET http://localhost:8080/api/runs/hello
+
+### Test GET All Runs
+GET http://localhost:8080/api/runs
+
+### Test GET Run by ID
+GET http://localhost:8080/api/runs/1
+
+### Test GET Run by ID that does not exist
+GET http://localhost:8080/api/runs/99
+
+### Test POST Create a Run
+POST http://localhost:8080/api/runs
+Content-Type: application/json
+
+{
+    "id": 3,
+    "title": "Sunset Run",
+    "startedOn": "2024-12-12T18:00",
+    "completedOn": "2024-12-12T20:00",
+    "miles": 7,
+    "location": "OUTDOOR"
+}
+
+### Test PUT Update a Run
+PUT http://localhost:8080/api/runs/1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "title": "Updated Morning Run",
+    "startedOn": "2024-12-12T06:00",
+    "completedOn": "2024-12-12T08:00",
+    "miles": 6,
+    "location": "INDOOR"
+}
+
+### Test DELETE a Run
+DELETE http://localhost:8080/api/runs/1
